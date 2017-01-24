@@ -14,11 +14,13 @@ GEM
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
+    concurrent-ruby (1.0.4)
     concurrent-ruby (1.0.4-java)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
     equalizer (0.0.11)
+    ffi (1.9.17)
     ffi (1.9.17-java)
     grape (0.19.1)
       activesupport
@@ -50,6 +52,7 @@ GEM
       tool (~> 0.2)
     mustermann-grape (0.4.0)
       mustermann (= 0.4.0)
+    newrelic_rpm (3.18.0.329)
     pry (0.10.4-java)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -81,6 +84,7 @@ GEM
     slop (3.6.0)
     spoon (0.0.6)
       ffi
+    thread_safe (0.3.5)
     thread_safe (0.3.5-java)
     tool (0.2.3)
     tzinfo (1.2.2)
@@ -100,6 +104,7 @@ DEPENDENCIES
   jrjackson (~> 0.4, >= 0.4.2)
   logging (~> 2.1)
   multi_json (~> 1.12, >= 1.12.1)
+  newrelic_rpm
   oj
   pry
   pry-debugger-jruby

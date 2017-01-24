@@ -11,6 +11,7 @@ gem 'oj', platforms: :ruby
 gem 'jrjackson', '~> 0.4', '>= 0.4.2', platforms: :jruby
 gem 'multi_json', '~> 1.12', '>= 1.12.1'
 gem 'logging', '~> 2.1'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'pry'
