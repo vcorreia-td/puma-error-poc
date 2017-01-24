@@ -1,0 +1,3 @@
+module MyServiceName
+
+end
