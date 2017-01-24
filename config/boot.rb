@@ -8,6 +8,7 @@ require 'my_service_name'
 
 require_relative 'log'
 require_relative 'multi_json'
+require_relative 'bugsnag'
 
 module MyServiceName
 
