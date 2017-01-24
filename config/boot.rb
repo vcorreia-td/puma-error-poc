@@ -6,6 +6,7 @@ ENV['RACK_ENV'] ||= 'development'
 require 'web'
 require 'my_service_name'
 
+require_relative 'log'
 require_relative 'multi_json'
 
 module MyServiceName
