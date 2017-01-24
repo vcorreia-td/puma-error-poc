@@ -10,6 +10,8 @@ require_relative 'log'
 require_relative 'multi_json'
 require_relative 'bugsnag'
 
+require 'newrelic_rpm'
+
 module MyServiceName
 
 end
