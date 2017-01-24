@@ -7,6 +7,10 @@ gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
 
+gem 'oj', platforms: :ruby
+gem 'jrjackson', '~> 0.4', '>= 0.4.2', platforms: :jruby
+gem 'multi_json', '~> 1.12', '>= 1.12.1'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-debugger-jruby', platforms: :jruby
