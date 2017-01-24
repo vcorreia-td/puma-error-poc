@@ -6,3 +6,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-debugger-jruby', platforms: :jruby
 end
+
+group :test do
+  gem 'rspec'
+end
