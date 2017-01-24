@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  common: &BASE
+    build:
+      context: .
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+    environment:
+      - JRUBY_OPTS=--dev
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  tests: &TESTS
+    <<: *BASE
+    command: bin/rspec
+
+  tests-mri:
+    <<: *TESTS
+    build:
+      context: .
+      dockerfile: Dockerfile-mri
+      args:
+        BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+    command: bundle exec rspec
