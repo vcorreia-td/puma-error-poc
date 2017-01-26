@@ -16,6 +16,7 @@ gem 'bugsnag', '~> 5.0', '>= 5.0.0'
 
 group :development, :test do
   gem 'pry'
+  gem 'pry-byebug', platforms: :ruby
   gem 'pry-debugger-jruby', platforms: :jruby
 end
 

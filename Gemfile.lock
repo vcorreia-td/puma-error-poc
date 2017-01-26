@@ -108,6 +108,7 @@ DEPENDENCIES
   newrelic_rpm
   oj
   pry
+  pry-byebug
   pry-debugger-jruby
   puma (~> 3.6, >= 3.6.2)
   rack-cors
