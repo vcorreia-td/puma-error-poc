@@ -6,6 +6,7 @@ gem 'puma', '~> 3.6', '>= 3.6.2'
 gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
+gem 'dry-container', '~> 0.3.3'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', '~> 0.4', '>= 0.4.2', platforms: :jruby
