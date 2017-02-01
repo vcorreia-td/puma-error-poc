@@ -6,8 +6,8 @@ TODO
 - [ ] Oat & Swagger support
 - [ ] Setup guide: fork, name replacement, running the server, running the tests
 - [ ] Review retrieved talkdesk headers
-- [ ] Add a Procfile
-- [ ] README project template
+- [x] Add a Procfile
+- [x] README project template
 - [ ] JRuby dev environment guide
 - [ ] Heroku bootstrap guide
 - [ ] Heroku deploy guide
