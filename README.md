@@ -3,7 +3,7 @@
 WIP bootstrap template for a ruby service
 
 TODO
-- [ ] Oat & Swagger support
+- [x] Oat & Swagger support
 - [ ] Setup guide: fork, name replacement, running the server, running the tests
 - [ ] Review retrieved talkdesk headers
 - [x] Add a Procfile
