@@ -6,6 +6,8 @@ gem 'puma'
 gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
+gem 'oat'
+gem 'grape-swagger'
 gem 'dry-container'
 
 gem 'oj', platforms: :ruby
