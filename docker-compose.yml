@@ -12,15 +12,30 @@ services:
       - 8.8.8.8
       - 8.8.4.4
 
-  tests: &TESTS
+  mri: &MRI
     <<: *BASE
-    command: bin/rspec
-
-  tests-mri:
-    <<: *TESTS
     build:
       context: .
       dockerfile: Dockerfile-mri
       args:
         BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
+
+  tests:
+    <<: *BASE
+    command: bin/rspec
+
+  tests-mri:
+    <<: *MRI
     command: bundle exec rspec
+
+  dev:
+    <<: *BASE
+    ports:
+      - "9292:9292"
+    command: bin/puma -b tcp://0.0.0.0:9292 config.ru
+
+  dev-mri:
+    <<: *MRI
+    ports:
+      - "9292:9292"
+    command: bundle exec puma -b tcp://0.0.0.0:9292 config.ru
