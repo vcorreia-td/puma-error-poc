@@ -19,7 +19,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 RUN gem install bundler
 
-ENV APP_HOME /contacts_intake_worker
+ENV APP_HOME /my_service_name
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
