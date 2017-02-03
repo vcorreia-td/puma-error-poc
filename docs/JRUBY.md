@@ -22,7 +22,7 @@ The heap memory alluded to above is only one of several memory spaces that the J
 
 * Tune the size of the code cache using `-XX:ReservedCodeCacheSize` (also `-XX:+PrintCodeCache` may be useful to tune this information)
 * Tune the maximum size of the meta space using `-XX:MaxMetaspaceSize`
-* Tune the stack size of threads using `-Xss` (e.g. `-Xss512k` for KiB per thread)
+* Tune the stack size of threads using `-Xss` (e.g. `-Xss512k` for 512 KiB per thread)
 
 Other useful JVM flags:
 
