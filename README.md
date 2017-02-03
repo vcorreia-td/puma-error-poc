@@ -39,6 +39,16 @@ Optional knobs:
 * `PUMA_PROCESS_THREADS`: Number of threads per puma process (default to `16`)
 * `LOG_LEVEL`: severity level for logs (defaults to `info`, when `RACK_ENV`=`test` defaults to `warn`)
 
+## JRuby
+
+* [docs/JRUBY.md](https://github.com/Talkdesk/ruby-service/tree/master/docs/JRUBY.md)
+
+## Debugging
+
+This project includes the `pry-debugger` gem, so you can use `next`/`step`/`finish`/`continue` inside of pry, but you'll need to add `--debug` to your `JRUBY_OPTS` for these to work.
+
+I recommend only adding that environment variable when you really want to debug something in this way, as it otherwise slows JRuby down **a lot**.
+
 ## Run tests
 
 `./bin/rspec`

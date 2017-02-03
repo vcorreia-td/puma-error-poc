@@ -3,6 +3,6 @@
 - [ ] Review retrieved talkdesk headers
 - [x] Add a Procfile
 - [x] README project template
-- [ ] JRuby dev environment guide
+- [x] JRuby dev environment guide
 - [ ] Heroku bootstrap guide
 - [ ] Heroku deploy guide
