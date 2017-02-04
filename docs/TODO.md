@@ -2,7 +2,7 @@
 - [x] Add a Procfile
 - [x] README project template
 - [x] JRuby dev environment guide
-- [ ] Rake task to bootstrap the project, replace the names like in this PR
+- [x] Rake task to bootstrap the project, replace the names like in this PR
 - [ ] Add Bootstrap guide: clone, run rake, bundle install, run server
 - [ ] Improve the helpers that extract request headers, there may be some headers missing
 - [ ] Add HTTPS enforcer Rack Middleware
