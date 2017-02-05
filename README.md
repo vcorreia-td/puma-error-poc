@@ -1,3 +1,6 @@
+
+* [Bootstrap Guide](https://github.com/Talkdesk/ruby-service/tree/master/docs/BOOTSTRAP.md)
+
 # MyServiceName
 
 `Small description of the service, including its main objective and functionalities.`
