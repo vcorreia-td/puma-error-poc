@@ -37,7 +37,7 @@ Several files have been changed after this, I suggest you check if everything is
 
 Assuming you already created a git remote repository for your project
 
-* `git remote add origin git@github.com:Talkdesk/awesome-api`
+* `git remote set-url origin git@github.com:Talkdesk/awesome-api`
 * `git push -u origin master`
 
 ### That's it! You're good to go :)
