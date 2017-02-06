@@ -18,7 +18,7 @@ namespace :ruby_service do
         .gsub(/my_service_name/, service_name)
         .gsub(/MyServiceName/, camelize(service_name))
 
-      File.open(file_name, 'w') { |f| f.puts new_contents }
+      File.open(file, 'w') { |f| f.puts new_contents }
     end
   end
 
