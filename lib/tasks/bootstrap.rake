@@ -4,21 +4,21 @@ namespace :ruby_service do
 
     # rename directories and files
     Dir.glob('**/*') do |file_path|
-      if file.include? 'my_service_name'
-        new_path = file.gsub(/my_service_name/, service_name)
+      if file_path.include? 'my_service_name'
+        new_path = file_path.gsub(/my_service_name/, service_name)
 
-        FileUtils.mv(file, new_path) rescue nil
+        FileUtils.mv(file_path, new_path) rescue nil
       end
     end
 
     # rename file contents where MyServiceName & my_service_name occur
-    Dir.glob('**/*.rb') do |file|
+    Dir.glob('**/*.rb') do |file_path|
       new_contents =
-        File.read(file)
+        File.read(file_path)
         .gsub(/my_service_name/, service_name)
         .gsub(/MyServiceName/, camelize(service_name))
 
-      File.open(file, 'w') { |f| f.puts new_contents }
+      File.open(file_path, 'w') { |f| f.puts new_contents }
     end
   end
 
