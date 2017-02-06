@@ -26,7 +26,7 @@ This should install all dependencies and create a `Gemfile.lock`.
 
 * `bundle exec rake "ruby_service:bootstrap[awesome_api]"`
 
-This will rename and files and directories name `my_service_name`, which is the default name used in the template, as well as, replace all occurrences of `my_service_name` and `MyServiceName` inside all files. Inteads, the name you have as an argument will appear.
+This will rename and files and directories name `my_service_name`, which is the default name used in the template, as well as replace all occurrences of `my_service_name` and `MyServiceName` inside all files. Instead, the name you have as an argument will appear.
 
 ### Setting up your remote
 
@@ -40,4 +40,4 @@ Assuming you already created a git remote repository for your project
 * `git remote add origin git@github.com:Talkdesk/awesome-api`
 * `git push -u origin master`
 
-### Thats it! You're good to go :)
+### That's it! You're good to go :)
