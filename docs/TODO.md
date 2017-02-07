@@ -4,7 +4,6 @@
 - [x] JRuby dev environment guide
 - [x] Rake task to bootstrap the project, replace the names like in this PR
 - [x] Add Bootstrap guide: clone, run rake, bundle install, run server
-- [ ] Improve the helpers that extract request headers, there may be some headers missing
 - [x] Add HTTPS enforcer Rack Middleware
 - [ ] Guide for Heroku bootstrap
 - [ ] Guide for Heroku production
