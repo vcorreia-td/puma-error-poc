@@ -27,4 +27,6 @@ group :test do
   gem 'rspec'
   gem 'rspec-given'
   gem 'rack-test'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
