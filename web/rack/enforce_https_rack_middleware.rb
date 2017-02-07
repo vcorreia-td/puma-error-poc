@@ -5,15 +5,17 @@ require 'bugsnag'
 
 module MyServiceName
   class EnforceHttpsRackMiddleware
+    ENFORCE_HTTPS_USAGE = ENV['RACK_ENV'] != 'development'
 
     InsecureRequestError = Class.new(StandardError)
 
-    def initialize(app)
+    def initialize(app, enforce_https_usage: ENFORCE_HTTPS_USAGE)
       @app = app
+      @enforce_https_usage = enforce_https_usage
     end
 
     def call(env)
-      if using_https?(env)
+      if !@enforce_https_usage || using_https?(env)
         @app.call(env)
       else
         report_issue(env)
