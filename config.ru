@@ -12,4 +12,8 @@ if ENV['RACK_ENV'] == 'development'
   end
 end
 
+use Bugsnag::Rack
+
+use MyServiceName::EnforceHttpsRackMiddleware
+
 run MyServiceName::Web

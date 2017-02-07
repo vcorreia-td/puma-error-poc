@@ -10,6 +10,7 @@ require_relative 'bugsnag'
 require 'my_service_name'
 require 'my_service_name/log'
 require 'web'
+require 'rack/enforce_https_rack_middleware'
 
 module MyServiceName
   System = MyServiceName.dependencies(eagerly_initialize: ENV['RACK_ENV'] != 'development')
