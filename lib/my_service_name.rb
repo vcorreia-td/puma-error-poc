@@ -11,6 +11,8 @@ module MyServiceName
 
     # require 'my_dependency_here'
 
+    require 'my_service_name/interactors/add_six'
+
     # When to use memoize?
     # Memoize should be used when registering thread-safe instances, so they
     # can be (and will be) reused by all threads. This means that you
@@ -25,6 +27,10 @@ module MyServiceName
 
     container.register(:env) {
       ENV
+    }
+
+    container.register(:add_six, memoize: true) {
+      MyServiceName::Interactor::AddSix.new(container)
     }
 
     self.eagerly_initialize(container) if eagerly_initialize
