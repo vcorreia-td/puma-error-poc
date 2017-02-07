@@ -36,7 +36,7 @@ Optional knobs:
 `List here ENV vars that do not need to be set and their defaults`
 
 * `RACK_ENV`: Used to configure the current application environment, e.g. `production`, `qa`, `staging`, `test` or `development` (defaults to `development`)
-* `APP_NAME`: Application name, used in reporting and logging (defaults to `?????????`)
+* `APP_NAME`: Application name, used in reporting and logging (defaults to `my_service_name`)
 * `APP_VERSION`: Application version for logging (defaults to heroku metadata if available, else `ENV['RACK_ENV']`)
 * `BUGSNAG_API_KEY`: Bugsnag Notifier API Key will configure bugsnag notifier to emit all notifications to the bugsnag application represented by this key (no default)
 * `PUMA_PROCESS_THREADS`: Number of threads per puma process (default to `16`)
