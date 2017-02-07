@@ -7,7 +7,7 @@
 - [x] Add HTTPS enforcer Rack Middleware
 - [ ] Guide for Heroku bootstrap
 - [ ] Guide for Heroku production
-- [ ] Example endpoint that shows how to mount a grape endpoint, register and call an interactor, covered with specs and auto-generate swagger documentation.
+- [x] Example endpoint that shows how to mount a grape endpoint, register and call an interactor, covered with specs and auto-generate swagger documentation.
 
 ==== Release v1.0 ====
 
