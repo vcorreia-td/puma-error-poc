@@ -20,7 +20,8 @@ module MyServiceName
       post do
         result = System[:add_six].call(number: params[:number])
 
-        status(200) && MyServiceName::AddSixSerializer.new(result, env)
+        status 200
+        MyServiceName::AddSixSerializer.new(result, env)
       end
     end
   end
