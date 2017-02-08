@@ -9,7 +9,10 @@
 
 ==== Release v1.0 ====
 
-- [ ] Guide for Heroku bootstrap
-- [ ] Guide for Heroku production
-- [ ] Add a rabbitmq consumer boilerplate with Talkdesk Events gem
+- [ ] Guide: Bootstraping my service in Heroku
+- [ ] Guide: Managing my service production (Heroku)
+- [ ] Add a rabbitmq `consumer` boilerplate with Talkdesk Events gem
+- [ ] Add a rabbitmq `producer` boilerplate with Talkdesk Events gem
 - [ ] Possibly extract GrapeSwaggerOatParser and Base Serializer into a gem as @dcsg suggested
+- [ ] Rubocop support
+- [ ] Guide: How to generate Swagger documentation
