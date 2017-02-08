@@ -1,4 +1,4 @@
-require 'serializers/error_serializer'
+require 'serializers/error'
 
 module MyServiceName
   module ErrorFormatter

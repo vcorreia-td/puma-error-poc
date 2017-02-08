@@ -4,6 +4,8 @@ require 'grape'
 require 'grape-swagger'
 require 'grape/route_helpers'
 
+require 'endpoints/add_six'
+
 require 'helpers/request_metadata_helper'
 require 'helpers/log_helper'
 require 'helpers/bugsnag_helper'
@@ -40,6 +42,7 @@ module MyServiceName
 
     # mount endpoints here
 
+    mount MyServiceName::AddSixEndpoints
 
     ###
 
