@@ -6,7 +6,7 @@ namespace :ruby_service do
       rename_files(file_path, service_name) if file_path.include? 'my_service_name'
     end
 
-    Dir.glob('**/*.rb') do |file_path|
+    Dir.glob('**/*.{ru,rb}') do |file_path|
       replace_file_contents(file_path, service_name)
     end
 
