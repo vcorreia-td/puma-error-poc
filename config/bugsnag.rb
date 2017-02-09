@@ -15,9 +15,6 @@ Bugsnag.configure do |c|
     /access[_-]token/i,
     /[x]?[_-]?api[_-]key/i,
     /api[_-]token/i,
-    /authorization/i,
-    /password/i,
-    /secret/i,
     /session[_-]id/i,
     /csrf/i
   ]
