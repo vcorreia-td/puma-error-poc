@@ -11,7 +11,16 @@ Bugsnag.configure do |c|
   c.logger = Logging.logger[Bugsnag]
   c.hostname = "#{c.release_stage[0]}-#{ENV['DYNO'] || Socket.gethostname}-#{ENV['APP_NAME']}"
   c.app_version = ENV['APP_VERSION']
-  c.params_filters += [/access-token/i, /x-api-key/i, /session_id/i, /csrf/i]
+  c.params_filters += [
+    /access[_-]token/i,
+    /[x]?[_-]?api[_-]key/i,
+    /api[_-]token/i,
+    /authorization/i,
+    /password/i,
+    /secret/i,
+    /session[_-]id/i,
+    /csrf/i
+  ]
 end unless ['test', 'development'].include?(ENV['RACK_ENV'])
 
 at_exit do
