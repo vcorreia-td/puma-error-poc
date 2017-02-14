@@ -13,16 +13,16 @@ module DependencyDoublesHelper
 
     # Example of a dependency declaration, :class & :instance
 
-    #my_interactor: {
-    #  name:    'MyServiceName::Interactors::MyInteractor',
-    #  require: 'my_service_name/interactors/my_interactor',
-    #  type:    :instance,
-    #},
-    #my_factory: {
-    #  name:    'MyServiceName::MyFactory',
-    #  require: 'my_service_name/my_factory',
-    #  type:    :class,
-    #},
+    # my_interactor: {
+    #   name:    'MyServiceName::Interactors::MyInteractor',
+    #   require: 'my_service_name/interactors/my_interactor',
+    #   type:    :instance,
+    # },
+    # my_factory: {
+    #   name:    'MyServiceName::MyFactory',
+    #   require: 'my_service_name/my_factory',
+    #   type:    :class,
+    # },
   }.freeze
 
   def dependency_double(name, **args)
