@@ -9,7 +9,8 @@ module MyServiceName
         lambda do |notif|
           notif.user = {id: request['talkdesk.account_id']}
 
-          notif.add_tab(:request,
+          notif.add_tab(
+            :request,
             platform_tid: request['talkdesk.platform_tid'],
             request_id:   request['talkdesk.request_id'],
             account_id:   request['talkdesk.account_id'],

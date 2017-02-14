@@ -6,7 +6,6 @@ module MyServiceName
   extend self
 
   def dependencies(container: Dry::Container.new, eagerly_initialize: true)
-
     # https://github.com/dry-rb/dry-container
 
     # require 'my_dependency_here'
