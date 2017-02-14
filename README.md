@@ -52,6 +52,10 @@ This project includes the `pry-debugger` gem, so you can use `next`/`step`/`fini
 
 I recommend only adding that environment variable when you really want to debug something in this way, as it otherwise slows JRuby down **a lot**.
 
+## Rubocop
+
+Check for style offenses by running: `./bin/rubocop`
+
 ## Run tests
 
 `./bin/rspec`
