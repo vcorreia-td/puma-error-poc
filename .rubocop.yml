@@ -68,3 +68,7 @@ Performance/RedundantBlockCall:
 
 Style/ClosingParenthesisIndentation:
   Enabled: false
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
