@@ -26,7 +26,7 @@ preload_app! if processes > 1 && process_preload > 0
 
 # Handler for uncaught exceptions
 lowlevel_error_handler do |e|
-  error = {error: "Internal server error"}
+  error = {error: 'Internal server error'}
 
   if ENV['RACK_ENV'] != 'production'
     error = error.merge(
@@ -43,4 +43,4 @@ lowlevel_error_handler do |e|
   ]
 end
 
-puts "Loaded puma configuration."
+puts 'Loaded puma configuration.'
