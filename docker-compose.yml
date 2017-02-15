@@ -26,7 +26,7 @@ services:
 
   tests-mri:
     <<: *MRI
-    command: bundle exec rspec
+    command: bin/rspec
 
   dev:
     <<: *BASE
@@ -38,4 +38,4 @@ services:
     <<: *MRI
     ports:
       - "9292:9292"
-    command: bundle exec puma -b tcp://0.0.0.0:9292 config.ru
+    command: bin/puma -b tcp://0.0.0.0:9292 config.ru
