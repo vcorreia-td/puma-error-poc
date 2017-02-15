@@ -31,7 +31,7 @@ def replace_file_contents(file_path, new_name)
     .gsub(/my_service_name/, new_name)
     .gsub(/MyServiceName/, camelize(new_name))
 
-  File.open(file_path, 'w') { |f| f.puts new_contents }
+  File.open(file_path, 'w') { |file| file.puts new_contents }
 end
 
 def camelize(name)
