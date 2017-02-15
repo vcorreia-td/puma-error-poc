@@ -6,6 +6,8 @@ module MyServiceName
       include Log
 
       def initialize(_environment)
+        # @my_dependency = environment[:my_dependency]
+        nil
       end
 
       def call(number:)

@@ -19,6 +19,10 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 RUN gem install bundler
 
+# Workaround for broken jruby image
+# gem is not up to date
+RUN gem update --system
+
 ENV APP_HOME /my_service_name
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME

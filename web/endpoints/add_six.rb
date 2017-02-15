@@ -9,7 +9,7 @@ module MyServiceName
       desc 'Adds 6 to the received number' do
         success MyServiceName::AddSixSerializer
         failure [
-          [400, 'Bad request', MyServiceName::ErrorSerializer]
+          [400, 'Bad request', MyServiceName::ErrorSerializer],
         ]
       end
 
