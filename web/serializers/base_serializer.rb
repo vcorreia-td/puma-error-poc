@@ -48,9 +48,9 @@ module MyServiceName
             entities property_name, item.send(property_name), property_attributes[:type]
           elsif property_attributes[:extended]
             if property_attributes[:collection]
-              property property_name, item.send(property_name).map do |obj|
+              property(property_name, item.send(property_name).map { |obj|
                 property_attributes[:type].new(obj, context).to_hash
-              end
+              })
             else
               property property_name, property_attributes[:type].new(item.send(property_name), context).to_hash
             end
