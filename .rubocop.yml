@@ -2,9 +2,6 @@ AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - config/puma.rb
-    - web/helpers/request_metadata_helper.rb
-    - web/serializers/base_serializer.rb
-    - web/serializers/grape_swagger_oat_parser.rb
 
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
