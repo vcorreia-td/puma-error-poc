@@ -18,6 +18,8 @@ gem 'newrelic_rpm'
 gem 'bugsnag'
 
 group :development, :test do
+   # includes fix for circular require warnings (feel free to remove in a few months):
+  gem 'jar-dependencies', '>= 0.3.10', platforms: :jruby
   gem 'pry'
   gem 'pry-byebug', platforms: :ruby
   gem 'pry-debugger-jruby', platforms: :jruby
