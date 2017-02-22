@@ -22,7 +22,7 @@ threads process_min_threads, process_max_threads
 
 # If we use web concurrency (workers > 1), we may take advantage of the Copy on Write feature in MRI Ruby 2.0
 process_preload = Integer(ENV['PUMA_PROCESS_PRELOAD'] || 1)
-preload_app! if processes > 1 && process_preload > 0
+preload_app! if processes > 1 && process_preload.positive?
 
 # Handler for uncaught exceptions
 lowlevel_error_handler do |e|
