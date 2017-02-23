@@ -1,5 +1,5 @@
 
-* [Bootstrap Guide](https://github.com/Talkdesk/ruby-service/tree/master/docs/BOOTSTRAP.md)
+* [Bootstrap Guide](docs/BOOTSTRAP.md)
 
 # MyServiceName
 
@@ -44,7 +44,7 @@ Optional knobs:
 
 ## JRuby
 
-* [docs/JRUBY.md](https://github.com/Talkdesk/ruby-service/tree/master/docs/JRUBY.md)
+* [JRuby guide](docs/JRUBY.md)
 
 ## Debugging
 
