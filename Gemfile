@@ -18,6 +18,9 @@ gem 'newrelic_rpm'
 gem 'bugsnag'
 
 group :development, :test do
+  # Includes fix for circular require warnings
+  # Remove when new JRuby version includes the fix: 9.1.8.0 or 9.2.0.0
+  gem 'jar-dependencies', '>= 0.3.10', platforms: :jruby
   gem 'pry'
   gem 'pry-byebug', platforms: :ruby
   gem 'pry-debugger-jruby', platforms: :jruby
