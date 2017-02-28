@@ -45,9 +45,15 @@ Optional knobs:
 
 ### 1. How to switch your ruby engine
 
-When using `rvm`:
-* jruby: `rvm install jruby-9.1.7.0 && rvm use jruby-9.1.7.0`
-* mri: `rvm install ruby-2.3.1 && rvm use ruby-2.3.1`
+JRuby: `rvm use jruby-9.1.7.0`
+
+MRI: `rvm use ruby-2.3.1`
+
+then:
+```
+$ gem install bundler
+$ bundle install
+```
 
 ### 2. Replace the contents of `.ruby-version`
 
