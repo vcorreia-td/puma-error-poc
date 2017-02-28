@@ -15,7 +15,6 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y --force-yes ${BUILD_DEPENDENCIES} ${RUNTIME_DEPENDENCIES} \
     && gem install bundler \
-    && ruby -pi -e 'gsub(/, engine.*$/,%q())' Gemfile \
     && bundle install -j${NPROC} \
     && apt-get purge -y --force-yes ${BUILD_DEPENDENCIES} \
     && apt-get autoremove -y --force-yes \
@@ -23,6 +22,3 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY . $APP_HOME
-
-# Remove engine declaration from Gemfile a second time, the add above resets it
-RUN ruby -pi -e 'gsub(/, engine.*$/,%q())' Gemfile
