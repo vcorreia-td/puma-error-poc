@@ -1,5 +1,4 @@
-
-* [Bootstrap Guide](docs/BOOTSTRAP.md)
+<center><font size="20">[Getting Started](docs/GettingStarted.md)</font></center>
 
 # MyServiceName
 
