@@ -44,18 +44,27 @@ module MyServiceName
 
       schema do
         self.class.all_properties.each do |property_name, property_attributes|
-          if property_attributes[:embedded]
-            entities property_name, item.send(property_name), property_attributes[:type]
+          value =
+            if property_attributes[:resolver]&.respond_to?(:call)
+              property_attributes[:resolver].call(item: item, context: context)
+            else
+              item.send(property_name)
+            end
+
+          if property_attributes[:embedded] && property_attributes[:collection]
+            entities(property_name, value, property_attributes[:type])
+          elsif property_attributes[:embedded]
+            entity(property_name, value, property_attributes[:type])
           elsif property_attributes[:extended]
             if property_attributes[:collection]
-              property(property_name, item.send(property_name).map { |obj|
+              property(property_name, value.map { |obj|
                 property_attributes[:type].new(obj, context).to_hash
               })
             else
-              property property_name, property_attributes[:type].new(item.send(property_name), context).to_hash
+              property(property_name, property_attributes[:type].new(value).to_hash)
             end
           else
-            map_property property_name
+            property(property_name, value)
           end
         end
       end
