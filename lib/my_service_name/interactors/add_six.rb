@@ -1,3 +1,4 @@
+require 'time'
 require 'my_service_name/log'
 
 module MyServiceName
@@ -11,7 +12,7 @@ module MyServiceName
       end
 
       def call(number:)
-        OpenStruct.new(result: number + 6)
+        OpenStruct.new(result: number + 6, at: Time.new)
       end
     end
   end
