@@ -2,6 +2,7 @@ require 'my_service_name'
 
 require 'grape'
 require 'grape-swagger'
+require 'oat-swagger'
 require 'grape/route_helpers'
 
 require 'endpoints/add_six'
@@ -12,9 +13,6 @@ require 'helpers/bugsnag_helper'
 require 'helpers/json_parser'
 require 'helpers/json_formatter'
 require 'helpers/error_formatter'
-
-require 'serializers/grape_swagger_oat_parser'
-require 'serializers/base_serializer'
 
 module MyServiceName
   class Web < Grape::API
@@ -46,11 +44,14 @@ module MyServiceName
 
     ###
 
-    ::GrapeSwagger.model_parsers.register(GrapeSwaggerOatParser, BaseSerializer)
+    ::GrapeSwagger.model_parsers.register(
+      OatSwagger::GrapeSwaggerParser,
+      OatSwagger::Serializer,
+    )
 
     add_swagger_documentation(
       hide_documentation_path: true,
-      models: BaseSerializer.swagger_models,
+      models: OatSwagger::Serializer.swagger_models,
     )
   end
 end
