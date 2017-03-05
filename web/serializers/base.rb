@@ -2,6 +2,8 @@ require 'grape'
 
 module MyServiceName
   class BaseSerializer < OatSwagger::Serializer
+    include GrapeRouteHelpers::NamedRouteMatcher
+
     def item_url(resource:, env:, params: {})
       "#{base_url(env: env)}#{resource_url(resource: resource, params: params)}"
     end

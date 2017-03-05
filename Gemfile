@@ -30,6 +30,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec-given'
+  gem 'rspec-hal'
   gem 'rack-test'
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
