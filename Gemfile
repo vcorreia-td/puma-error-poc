@@ -9,7 +9,9 @@ gem 'grape-route-helpers'
 gem 'oat'
 gem 'grape-swagger'
 gem 'dry-container'
-gem 'oat-swagger', git: 'https://github.com/Talkdesk/oat-swagger.git'
+gem 'oat-swagger',
+  git: 'https://github.com/Talkdesk/oat-swagger.git',
+  tag: 'v0.1.0-beta'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
