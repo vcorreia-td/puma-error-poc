@@ -1,5 +1,4 @@
-
-* [Bootstrap Guide](docs/BOOTSTRAP.md)
+# [Getting Started](docs/GettingStarted.md)
 
 # MyServiceName
 
