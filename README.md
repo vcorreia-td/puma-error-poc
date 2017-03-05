@@ -1,4 +1,4 @@
-<center><font size="20">[Getting Started](docs/GettingStarted.md)</font></center>
+# [Getting Started](docs/GettingStarted.md)
 
 # MyServiceName
 
