@@ -74,6 +74,12 @@ Check for style offenses by running: `./bin/rubocop`
 * jruby: `docker-compose build dev && docker-compose run dev`
 * mri: `docker-compose build dev-mri && docker-compose run dev-mri`
 
+## Continuous Integration/Delivery (CI/CD)
+
+1. Go to: https://github.com/Talkdesk/jenkins-jobs
+2. Read the docs and/or talk to @punnie
+3. Open PR to add your project to automatic CI/CD pipeline
+
 ## Web API
 
 `Point to your API documentation, ideally auto-generated with Swagger`
