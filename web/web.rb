@@ -46,11 +46,6 @@ module MyServiceName
 
     ###
 
-    ::GrapeSwagger.model_parsers.register(
-      OatSwagger::GrapeSwaggerParser,
-      OatSwagger::Serializer,
-    )
-
     add_swagger_documentation(
       hide_documentation_path: true,
       models: OatSwagger::Serializer.swagger_models,
