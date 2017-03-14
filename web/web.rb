@@ -41,8 +41,8 @@ module MyServiceName
 
     # mount endpoints here
 
-    mount MyServiceName::RootEndpoints
-    mount MyServiceName::AddSixEndpoints
+    mount MyServiceName::Endpoints::Root
+    mount MyServiceName::Endpoints::AddSix
 
     ###
 
