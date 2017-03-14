@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '>= 2.3.1', '< 2.5'
 
 gem 'puma'
 gem 'rack-cors'

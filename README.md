@@ -52,7 +52,7 @@ MRI: `rvm use ruby-2.3.1`
 then:
 ```
 $ gem install bundler
-$ bundle install
+$ bundle update --ruby
 ```
 
 ### 2. Replace the contents of `.ruby-version`
