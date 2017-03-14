@@ -4,7 +4,6 @@ require 'serializers/add_six'
 
 module MyServiceName
   class AddSixEndpoints < Grape::API
-
     resource :addsix do
       desc 'Adds 6 to the received number' do
         success MyServiceName::AddSixSerializer

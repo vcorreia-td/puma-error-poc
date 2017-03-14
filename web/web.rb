@@ -2,8 +2,10 @@ require 'my_service_name'
 
 require 'grape'
 require 'grape-swagger'
+require 'oat-swagger'
 require 'grape/route_helpers'
 
+require 'endpoints/root'
 require 'endpoints/add_six'
 
 require 'helpers/request_metadata_helper'
@@ -12,9 +14,6 @@ require 'helpers/bugsnag_helper'
 require 'helpers/json_parser'
 require 'helpers/json_formatter'
 require 'helpers/error_formatter'
-
-require 'serializers/grape_swagger_oat_parser'
-require 'serializers/base_serializer'
 
 module MyServiceName
   class Web < Grape::API
@@ -25,12 +24,12 @@ module MyServiceName
 
     # https://github.com/ruby-grape/grape#table-of-contents
 
-    content_type    :json, 'application/json'
-    parser          :json, JsonParser
-    formatter       :json, JsonFormatter
-    error_formatter :json, ErrorFormatter
-    format          :json
-    default_format  :json
+    content_type    :json_hal, 'application/hal+json'
+    parser          :json_hal, JsonParser
+    formatter       :json_hal, JsonFormatter
+    error_formatter :json_hal, ErrorFormatter
+    format          :json_hal
+    default_format  :json_hal
 
     before do
       setup_request_metadata
@@ -42,15 +41,14 @@ module MyServiceName
 
     # mount endpoints here
 
+    mount MyServiceName::RootEndpoints
     mount MyServiceName::AddSixEndpoints
 
     ###
 
-    ::GrapeSwagger.model_parsers.register(GrapeSwaggerOatParser, BaseSerializer)
-
     add_swagger_documentation(
       hide_documentation_path: true,
-      models: BaseSerializer.swagger_models,
+      models: OatSwagger::Serializer.swagger_models,
     )
   end
 end

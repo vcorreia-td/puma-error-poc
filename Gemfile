@@ -9,6 +9,9 @@ gem 'grape-route-helpers'
 gem 'oat'
 gem 'grape-swagger'
 gem 'dry-container'
+gem 'oat-swagger',
+  git: 'https://github.com/Talkdesk/oat-swagger.git',
+  tag: 'v0.1.1-beta'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
@@ -29,6 +32,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec-given'
+  gem 'rspec-hal'
   gem 'rack-test'
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false

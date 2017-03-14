@@ -1,4 +1,4 @@
-require_relative 'base_serializer'
+require_relative 'base'
 
 module MyServiceName
   class AddSixSerializer < BaseSerializer
@@ -11,6 +11,10 @@ module MyServiceName
 
     # Due to the way the base serializer integrates with Oat & swagger
     # this must be always called on all serializers
-    build_schema
+    build_schema do
+      schema do
+        link :self, href: item_url(resource: :addsix, env: context)
+      end
+    end
   end
 end
