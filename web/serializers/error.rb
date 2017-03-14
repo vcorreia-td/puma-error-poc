@@ -1,10 +1,12 @@
 require_relative 'base'
 
 module MyServiceName
-  class ErrorSerializer < BaseSerializer
+  module Serializer
+    class Error < Base
 
-    property :error, type: String, desc: 'A descriptive error message', required: true
+      property :error, type: String, desc: 'A descriptive error message', required: true
 
-    build_schema
+      build_schema
+    end
   end
 end

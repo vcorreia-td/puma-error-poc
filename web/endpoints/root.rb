@@ -6,16 +6,16 @@ module MyServiceName
   module Endpoints
     class Root < Grape::API
       desc 'API Root' do
-        success MyServiceName::RootSerializer
+        success Serializer::Root
         failure [
-          [400, 'Bad request', MyServiceName::ErrorSerializer]
+          [400, 'Bad request', Serializer::Error]
         ]
       end
 
       get '/', as: :root do
         result = OpenStruct.new(hello: 'world')
 
-        MyServiceName::RootSerializer.new(result, env)
+        Serializer::Root.new(result, env)
       end
 
       route :any, '*path' do
