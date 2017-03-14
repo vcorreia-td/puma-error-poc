@@ -9,7 +9,7 @@
 # needed.
 module MyServiceName
   module Support
-    module DependencyDoublesHelper
+    module DependencyDoubles
       DEPENDENCIES = {
 
         # Example of a dependency declaration, :class & :instance
@@ -47,9 +47,9 @@ module MyServiceName
         end
       end
     end
-
-    RSpec.configure do |c|
-      c.include DependencyDoublesHelper
-    end
   end
+end
+
+RSpec.configure do |conf|
+  conf.include MyServiceName::Support::DependencyDoubles
 end

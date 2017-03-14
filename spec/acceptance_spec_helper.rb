@@ -4,7 +4,6 @@ require 'rack/test'
 require 'rspec-hal'
 require 'rspec/given'
 require 'rspec'
-require 'pry'
 
 require 'support/api_helpers'
 
