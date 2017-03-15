@@ -9,8 +9,8 @@ ADD Gemfile* $APP_HOME/
 ARG BUNDLE_GITHUB__COM
 
 RUN set -x \
-    && BUILD_DEPENDENCIES='curl build-essential git' \
-    && RUNTIME_DEPENDENCIES='' \
+    && BUILD_DEPENDENCIES='build-essential git' \
+    && RUNTIME_DEPENDENCIES='curl' \
     && NPROC=$(nproc --all) \
     && apt-get update \
     && apt-get install -y --force-yes ${BUILD_DEPENDENCIES} ${RUNTIME_DEPENDENCIES} \
