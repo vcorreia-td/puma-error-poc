@@ -10,7 +10,7 @@ require_relative 'bugsnag'
 require 'my_service_name'
 require 'my_service_name/log'
 require 'web'
-require 'rack/enforce_https_rack_middleware'
+require 'rack/enforce_https_middleware'
 require 'pry' if ENV['RACK_ENV'] == 'development'
 
 module MyServiceName

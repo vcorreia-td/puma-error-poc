@@ -29,7 +29,7 @@ module MyServiceName
     }
 
     container.register(:add_six, memoize: true) {
-      MyServiceName::Interactor::AddSix.new(container)
+      Interactors::AddSix.new(container)
     }
 
     self.eagerly_initialize(container) if eagerly_initialize

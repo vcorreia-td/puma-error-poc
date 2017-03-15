@@ -4,15 +4,14 @@ require 'rack/test'
 require 'rspec-hal'
 require 'rspec/given'
 require 'rspec'
-require 'pry'
 
-require 'support/api_helpers'
+require 'support/api'
 
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods
   conf.include RSpec::Hal::Helpers
   conf.include RSpec::Hal::Matchers
-  conf.include MyServiceName::Support::APIHelpers
+  conf.include MyServiceName::Support::API
   conf.include GrapeRouteHelpers::NamedRouteMatcher
 end
 

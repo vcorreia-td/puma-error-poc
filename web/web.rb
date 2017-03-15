@@ -8,9 +8,9 @@ require 'grape/route_helpers'
 require 'endpoints/root'
 require 'endpoints/add_six'
 
-require 'helpers/request_metadata_helper'
-require 'helpers/log_helper'
-require 'helpers/bugsnag_helper'
+require 'helpers/request_metadata'
+require 'helpers/log'
+require 'helpers/bugsnag'
 require 'helpers/json_parser'
 require 'helpers/json_formatter'
 require 'helpers/error_formatter'
@@ -18,16 +18,16 @@ require 'helpers/error_formatter'
 module MyServiceName
   class Web < Grape::API
 
-    helpers RequestMetadataHelper
-    helpers LogHelper
-    helpers BugsnagHelper
+    helpers Helpers::RequestMetadata
+    helpers Helpers::Log
+    helpers Helpers::Bugsnag
 
     # https://github.com/ruby-grape/grape#table-of-contents
 
     content_type    :json_hal, 'application/hal+json'
-    parser          :json_hal, JsonParser
-    formatter       :json_hal, JsonFormatter
-    error_formatter :json_hal, ErrorFormatter
+    parser          :json_hal, Helpers::JsonParser
+    formatter       :json_hal, Helpers::JsonFormatter
+    error_formatter :json_hal, Helpers::ErrorFormatter
     format          :json_hal
     default_format  :json_hal
 
@@ -41,8 +41,8 @@ module MyServiceName
 
     # mount endpoints here
 
-    mount MyServiceName::RootEndpoints
-    mount MyServiceName::AddSixEndpoints
+    mount Endpoints::Root
+    mount Endpoints::AddSix
 
     ###
 

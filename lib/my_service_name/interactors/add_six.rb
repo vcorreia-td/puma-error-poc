@@ -2,7 +2,7 @@ require 'time'
 require 'my_service_name/log'
 
 module MyServiceName
-  module Interactor
+  module Interactors
     class AddSix
       include Log
 

@@ -2,7 +2,7 @@ require 'multi_json'
 
 module MyServiceName
   module Support
-    module APIHelpers
+    module API
       def parsed_response
         MultiJson.load last_response.body
       end

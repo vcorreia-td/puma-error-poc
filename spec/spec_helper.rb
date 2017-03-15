@@ -102,3 +102,5 @@ RSpec.configure do |config|
 end
 
 ENV['RACK_ENV'] = 'test'
+require 'pry'
+require 'support/dependency_doubles'
