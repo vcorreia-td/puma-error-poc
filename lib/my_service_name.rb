@@ -32,7 +32,7 @@ module MyServiceName
       Interactors::AddSix.new(container)
     }
 
-    self.eagerly_initialize(container) if eagerly_initialize
+    eagerly_initialize(container) if eagerly_initialize
 
     container
   end
