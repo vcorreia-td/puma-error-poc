@@ -1,7 +1,12 @@
 AllCops:
   TargetRubyVersion: 2.3
+  DisplayCopNames: true
   Exclude:
     - config/puma.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
 
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
