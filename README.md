@@ -8,7 +8,7 @@
 
 To run this system, the following tools are required:
 
-* JRuby 9.1.7.0 or Ruby 2.3.1
+* JRuby 9.1.7.0 or Ruby 2.4
 * Bundler
 
 ### Private dependencies
@@ -47,7 +47,7 @@ Optional knobs:
 
 JRuby: `rvm use jruby-9.1.7.0`
 
-MRI: `rvm use ruby-2.3.1`
+MRI: `rvm use ruby-2.4`
 
 then:
 ```
@@ -59,7 +59,7 @@ $ bundle update --ruby
 
 JRuby: `jruby-9.1.7.0`
 
-MRI: `2.3.1`
+MRI: `2.4`
 
 This way, tools like `rvm` will automatically switch to the specified version when you `cd` into your project directory.
 
