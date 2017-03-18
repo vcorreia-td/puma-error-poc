@@ -15,7 +15,6 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y --force-yes ${BUILD_DEPENDENCIES} ${RUNTIME_DEPENDENCIES} \
     && gem install bundler \
-    && gem update --system \
     && ruby -pi -e 'gsub(/, engine.*$/,%q())' Gemfile \
     && bundle install -j${NPROC} \
     && apt-get purge -y --force-yes ${BUILD_DEPENDENCIES} \
