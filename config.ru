@@ -14,6 +14,6 @@ end
 
 use Bugsnag::Rack
 
-use MyServiceName::EnforceHttpsRackMiddleware
+use MyServiceName::Rack::EnforceHttpsMiddleware
 
 run MyServiceName::Web
