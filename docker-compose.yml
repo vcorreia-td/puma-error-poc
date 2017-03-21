@@ -39,3 +39,11 @@ services:
     ports:
       - '9292:9292'
     command: bin/puma -b tcp://0.0.0.0:9292 config.ru
+
+  console:
+    <<: *BASE
+    command: bin/console
+
+  console-mri:
+    <<: *MRI
+    command: bin/console
