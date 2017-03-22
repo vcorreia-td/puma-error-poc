@@ -73,14 +73,14 @@ Check for style offenses by running: `./bin/rubocop`
 * jruby: `docker-compose build dev && docker-compose run dev`
 * mri: `docker-compose build dev-mri && docker-compose run dev-mri`
 
-## Start console  
+## Start console
 
 `./bin/console`
 
 ### Docker
 
 * jruby: `docker-compose build console && docker-compose run console`
- * mri: `docker-compose build console-mri && docker-compose run console-mri` 
+* mri: `docker-compose build console-mri && docker-compose run console-mri`
 
 ## Continuous Integration/Delivery (CI/CD)
 
