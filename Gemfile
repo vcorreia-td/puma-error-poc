@@ -11,7 +11,7 @@ gem 'grape-swagger', '~> 0.27.0', '>= 0.27.0'
 gem 'dry-container'
 gem 'oat-swagger',
   git: 'https://github.com/Talkdesk/oat-swagger.git',
-  tag: 'v0.1.2-beta'
+  tag: 'v0.1.3-beta'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
