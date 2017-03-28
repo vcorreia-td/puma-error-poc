@@ -7,11 +7,11 @@ gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
 gem 'oat'
-gem 'grape-swagger'
+gem 'grape-swagger', '~> 0.27.0', '>= 0.27.0'
 gem 'dry-container'
 gem 'oat-swagger',
   git: 'https://github.com/Talkdesk/oat-swagger.git',
-  tag: 'v0.1.1-beta'
+  tag: 'v0.1.2-beta'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
