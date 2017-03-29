@@ -8,7 +8,7 @@
 
 To run this system, the following tools are required:
 
-* JRuby 9.1.7.0 or Ruby 2.3.1
+* JRuby 9.1.7.0 or Ruby 2.4.1
 * Bundler
 
 ### Private dependencies
@@ -41,6 +41,36 @@ Optional knobs:
 * `PUMA_PROCESS_THREADS`: Number of threads per puma process (default to `16`)
 * `LOG_LEVEL`: severity level for logs (defaults to `info`, when `RACK_ENV`=`test` defaults to `warn`)
 
+## Switching between Ruby Engines (MRI & JRuby)
+
+### 1. How to switch your ruby engine
+
+JRuby: `rvm use jruby-9.1.7.0`
+
+MRI: `rvm use ruby-2.4.1`
+
+then:
+```
+$ gem install bundler
+$ bundle update --ruby
+```
+
+### 2. Replace the contents of `.ruby-version`
+
+JRuby: `jruby-9.1.7.0`
+
+MRI: `ruby-2.4.1`
+
+This way, tools like `rvm` will automatically switch to the specified version when you `cd` into your project directory.
+
+To check which version you are on do: `ruby -v`
+
+### 3. Additional info
+
+* Your `bin/` executables run regardless of the engine.
+* Although you can specify the jruby engine in the Gemfile it is not necessary. It will use its environments engine. This way you don't need to change the Gemfile everytime you switch versions.
+* `jruby-9.1.7.0` specifically targets the `2.3.1` ruby version. JRuby will not work if you change it.
+
 ## JRuby
 
 * [JRuby guide](docs/JRUBY.md)
@@ -61,7 +91,7 @@ Check for style offenses by running: `./bin/rubocop`
 
 ### Docker
 
-* jruby: `docker-compose build tests && docker-compose run tests`
+* jruby: `docker-compose build tests-jruby && docker-compose run tests-jruby`
 * mri: `docker-compose build tests-mri && docker-compose run tests-mri`
 
 ## Start web server
@@ -70,8 +100,8 @@ Check for style offenses by running: `./bin/rubocop`
 
 ### Docker
 
-* jruby: `docker-compose build dev && docker-compose run dev`
-* mri: `docker-compose build dev-mri && docker-compose run dev-mri`
+* jruby: `docker-compose build dev-jruby && docker-compose up dev-jruby`
+* mri: `docker-compose build dev-mri && docker-compose up dev-mri`
 
 ## Start console
 

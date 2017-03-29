@@ -22,4 +22,8 @@ RUN set -x \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN cp Gemfile.lock Gemfile.lock.tmp
+
 COPY . $APP_HOME
+
+RUN cp Gemfile.lock.tmp Gemfile.lock
