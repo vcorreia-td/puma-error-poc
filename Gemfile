@@ -7,7 +7,7 @@ gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
 gem 'oat'
-gem 'grape-swagger', '~> 0.27.0', '>= 0.27.0'
+gem 'grape-swagger', '~> 0.27', '>= 0.27.0'
 gem 'dry-container'
 gem 'oat-swagger',
   git: 'https://github.com/Talkdesk/oat-swagger.git',
