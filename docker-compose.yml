@@ -43,10 +43,10 @@ services:
       - '9292:9292'
     command: bin/puma -b tcp://0.0.0.0:9292 config.ru
 
-  console:
-    <<: *BASE
+  console-jruby:
+    extends: jruby
     command: bin/console
 
   console-mri:
-    <<: *MRI
+    extends: mri
     command: bin/console
