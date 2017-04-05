@@ -36,4 +36,5 @@ group :test do
   gem 'rack-test'
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
+  gem 'colorize'
 end
