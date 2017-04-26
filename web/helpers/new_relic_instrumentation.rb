@@ -3,10 +3,10 @@ require 'grape'
 
 module MyServiceName
   module Helpers
-    module InstrumentationHelper
+    module NewRelicInstrumentation
       extend Grape::API::Helpers
 
-      def setup_instrumentation
+      def setup_new_relic_instrumentation
         ::NewRelic::Agent.add_custom_attributes(platform_tid: request['talkdesk.platform_tid'])
         ::NewRelic::Agent.add_custom_attributes(account_id: request['talkdesk.account_id'])
         ::NewRelic::Agent.add_custom_attributes(account_name: request['talkdesk.account'])

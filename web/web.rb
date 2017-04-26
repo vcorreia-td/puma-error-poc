@@ -9,7 +9,7 @@ require 'endpoints/root'
 require 'endpoints/add_six'
 
 require 'helpers/request_metadata'
-require 'helpers/instrumentation_helper'
+require 'helpers/new_relic_instrumentation'
 require 'helpers/log'
 require 'helpers/bugsnag'
 require 'helpers/json_parser'
@@ -20,7 +20,7 @@ module MyServiceName
   class Web < Grape::API
 
     helpers Helpers::RequestMetadata
-    helpers Helpers::InstrumentationHelper
+    helpers Helpers::NewRelicInstrumentation
     helpers Helpers::Log
     helpers Helpers::Bugsnag
 
@@ -35,7 +35,7 @@ module MyServiceName
 
     before do
       setup_request_metadata
-      setup_instrumentation
+      setup_new_relic_instrumentation
       setup_logger_request_metadata
       setup_bugsnag_request_metadata
 
