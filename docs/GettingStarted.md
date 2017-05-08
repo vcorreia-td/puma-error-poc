@@ -13,7 +13,7 @@ Let assume you chose `awesome_api`.
 
 ### Check if everything is running
 
-* `rvm use jruby-9.1.7.0`
+* `rvm use jruby-9.1.8.0`
 * `bundle install`
 
 This should install all dependencies and create a `Gemfile.lock`.

@@ -1,4 +1,4 @@
-FROM jruby:9.1.7.0
+FROM jruby:9.1.8.0
 MAINTAINER Talkdesk DevOps <devops@talkdesk.com>
 
 ENV APP_HOME /usr/src/app
@@ -15,7 +15,6 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y --force-yes ${BUILD_DEPENDENCIES} ${RUNTIME_DEPENDENCIES} \
     && gem install bundler \
-    && gem update --system \
     && bundle install -j${NPROC} \
     && apt-get purge -y --force-yes ${BUILD_DEPENDENCIES} \
     && apt-get autoremove -y --force-yes \
