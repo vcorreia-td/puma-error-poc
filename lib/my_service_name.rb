@@ -15,7 +15,7 @@ module MyServiceName
     # When to use memoize?
     # Memoize should be used when registering thread-safe instances, so they
     # can be (and will be) reused by all threads. This means that you
-    # **must now** add non-thread-safe instances as memoized instances, or there
+    # **MUST NOT** add non-thread-safe instances as memoized instances, or there
     # will be fireworks.
     #
     # When instances have non-thread-safe internal state, we register instead
