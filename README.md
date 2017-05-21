@@ -68,7 +68,7 @@ Optional knobs:
 
 ## 1. How to switch your ruby engine
 
-JRuby: `rvm use jruby-9.1.8.0`
+JRuby: `rvm use jruby-9.1.9.0`
 
 MRI: `rvm use ruby-2.4.1`
 
@@ -80,7 +80,7 @@ $ bundle update --ruby
 
 ## 2. Replace the contents of `.ruby-version`
 
-JRuby: `jruby-9.1.8.0`
+JRuby: `jruby-9.1.9.0`
 
 MRI: `ruby-2.4.1`
 
@@ -92,7 +92,7 @@ To check which version you are on do: `ruby -v`
 
 * Your `bin/` executables run regardless of the engine.
 * Although you can specify the jruby engine in the Gemfile it is not necessary. It will use its environments engine. This way you don't need to change the Gemfile everytime you switch versions.
-* JRuby 9.1 releases target the `2.3.1` ruby version. JRuby will not work if you change it.
+* JRuby 9.1.9.0 targets the `2.3.3` ruby version. JRuby will not work if you change it.
 
 # JRuby
 
