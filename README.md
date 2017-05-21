@@ -53,6 +53,8 @@ Required environment variables:
 
 `List here ENV vars which the service will not function without`
 
+* `API_KEYS`: Used to validate authentication keys submitted in requests (Can be not set when `RACK_ENV=development`)
+
 Optional knobs:
 
 `List here ENV vars that do not need to be set and their defaults`
