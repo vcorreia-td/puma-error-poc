@@ -49,7 +49,7 @@ RSpec.describe 'api key validation' do
       end
 
       context 'when the submitted key does not match the api key' do
-        Given { header 'Api-Key', 'xyz-' }
+        Given { header 'X-Api-Key', 'xyz-' }
         When  { get root_path }
         Then  { expect(last_response.status).to be 401 }
       end
