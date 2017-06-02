@@ -132,7 +132,7 @@ Check for style offenses by running: `./bin/rubocop`
 
 ## Docker
 
-* jruby: `docker-compose build console && docker-compose run console`
+* jruby: `docker-compose build console-jruby && docker-compose run console-jruby`
 * mri: `docker-compose build console-mri && docker-compose run console-mri`
 
 # Continuous Integration/Delivery (CI/CD)
