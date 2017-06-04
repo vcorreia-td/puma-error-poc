@@ -1,10 +1,7 @@
 RSpec.shared_context 'Api Authentication' do
   before do
-    ENV['API_KEYS'] = 'test1,test2'
-  end
-
-  after do
-    ENV['API_KEYS'] = nil
+    allow(ENV).to receive(:[]).and_call_original
+    allow(ENV).to receive(:[]).with('API_KEYS').and_return('test1,test2')
   end
 
   Given { header 'X-Api-key', 'test1'}
