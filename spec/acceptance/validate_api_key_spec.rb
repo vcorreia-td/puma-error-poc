@@ -6,11 +6,8 @@ RSpec.describe 'api key validation' do
 
     context 'when in development mode' do
       before do
-        ENV['RACK_ENV'] = 'development'
-      end
-
-      after do
-        ENV['RACK_ENV'] = 'test'
+        allow(ENV).to receive(:[]).and_call_original
+        allow(ENV).to receive(:[]).with('RACK_ENV').and_return('development')
       end
 
       When { get root_path }
