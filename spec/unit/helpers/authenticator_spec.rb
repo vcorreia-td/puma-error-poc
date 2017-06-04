@@ -52,7 +52,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
       let(:key) { '' }
 
       it do
-        expect { call }.to raise_error described_class::InvalidAuthKeys
+        expect { call }.to raise_error described_class::NoApiKeysConfigured
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
       let(:key) { '' }
 
       it do
-        expect { call }.to raise_error described_class::InvalidAuthKeys
+        expect { call }.to raise_error described_class::NoApiKeysConfigured
       end
     end
   end
