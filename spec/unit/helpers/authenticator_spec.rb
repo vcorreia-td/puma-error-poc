@@ -38,7 +38,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
         end
       end
 
-      context 'when the submitted key matches the authentication key' do
+      context 'when the submitted key does not match the authentication key' do
         let(:key) { 'xy' }
 
         it do
