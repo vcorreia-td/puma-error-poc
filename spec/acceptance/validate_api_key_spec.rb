@@ -17,11 +17,8 @@ RSpec.describe 'api key validation' do
 
   context 'when an api key is configured' do
     before do
-      ENV['API_KEYS'] = 'abc,xyz'
-    end
-
-    after do
-      ENV['API_KEYS'] = nil
+      allow(ENV).to receive(:[]).and_call_original
+      allow(ENV).to receive(:[]).with('API_KEYS').and_return('abc,xyz')
     end
 
     context 'when the submitted key is valid' do
