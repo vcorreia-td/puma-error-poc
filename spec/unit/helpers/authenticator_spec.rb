@@ -7,10 +7,10 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
   describe '.call' do
     let(:call) { subject.call(auth_keys: api_keys, submitted_key: key) }
 
-    context 'when there is more than one comma separated authentic key' do
+    context 'when there is more than one comma separated authentication key' do
       let(:api_keys) { 'abc,xyz' }
 
-      context 'when the submitted key matches one of the authentic keys' do
+      context 'when the submitted key matches one of the authentication keys' do
         let(:key) { 'xyz' }
 
         it do
@@ -18,7 +18,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
         end
       end
 
-      context 'when the submitted key does not match one of the authentic keys' do
+      context 'when the submitted key does not match one of the authentication keys' do
         let(:key) { 'xy' }
 
         it do
@@ -27,10 +27,10 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
       end
     end
 
-    context 'when there is only one authentic key' do
+    context 'when there is only one authentication key' do
       let(:api_keys) { 'abc' }
 
-      context 'when the submitted key matches the authentic key' do
+      context 'when the submitted key matches the authentication key' do
         let(:key) { 'abc' }
 
         it do
@@ -38,7 +38,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
         end
       end
 
-      context 'when the submitted key matches the authentic key' do
+      context 'when the submitted key matches the authentication key' do
         let(:key) { 'xy' }
 
         it do
@@ -56,7 +56,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
       end
     end
 
-    context 'when the authentic keys is nil' do
+    context 'when the authentication keys is nil' do
       let(:api_keys) { nil }
       let(:key) { '' }
 
