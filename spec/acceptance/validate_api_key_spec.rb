@@ -2,7 +2,7 @@ require 'acceptance_spec_helper'
 
 RSpec.describe 'api key validation' do
   context 'when no api key is configured' do
-    When { expect { get root_path }.to raise_error }
+    Then { expect { get root_path }.to raise_error }
 
     context 'when in development mode' do
       before do
