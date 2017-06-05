@@ -20,4 +20,3 @@ end
 # Load newrelic after all other gems and files, to make sure all probes are
 # enabled (otherwise some conditional probes may not load).
 require_relative 'newrelic'
-
