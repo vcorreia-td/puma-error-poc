@@ -6,6 +6,7 @@ require 'rspec/given'
 require 'rspec'
 
 require 'support/api'
+require 'support/api_authentication'
 
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods

@@ -1,6 +1,8 @@
 require 'acceptance_spec_helper'
 
 RSpec.describe 'Add six' do
+  include_context 'Api Authentication'
+
   When { post(addsix_path, number: 33) }
   Then { expect(last_response.status).to be 200 }
   And  { expect(last_response.headers).to include('Content-Type' => 'application/hal+json') }

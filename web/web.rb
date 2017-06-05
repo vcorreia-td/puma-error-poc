@@ -15,6 +15,7 @@ require 'helpers/bugsnag'
 require 'helpers/json_parser'
 require 'helpers/json_formatter'
 require 'helpers/error_formatter'
+require 'helpers/auth'
 
 module MyServiceName
   class Web < Grape::API
@@ -23,6 +24,7 @@ module MyServiceName
     helpers Helpers::NewRelicInstrumentation
     helpers Helpers::Log
     helpers Helpers::Bugsnag
+    helpers Helpers::Auth
 
     # https://github.com/ruby-grape/grape#table-of-contents
 
@@ -40,6 +42,8 @@ module MyServiceName
       setup_bugsnag_request_metadata
 
       logger.info "#{env['REQUEST_METHOD']} #{env['REQUEST_URI']}"
+
+      validate_api_key
     end
 
     # mount endpoints here

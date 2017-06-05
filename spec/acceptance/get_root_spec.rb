@@ -1,6 +1,8 @@
 require 'acceptance_spec_helper'
 
 RSpec.describe 'GET /' do
+  include_context 'Api Authentication'
+
   When { get root_path }
   Then { expect(last_response.status).to be 200 }
   And  { expect(last_response.headers).to include('Content-Type' => 'application/hal+json') }

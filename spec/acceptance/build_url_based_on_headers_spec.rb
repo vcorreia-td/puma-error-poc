@@ -1,6 +1,8 @@
 require 'acceptance_spec_helper'
 
 RSpec.describe 'Build URL based on request headers' do
+  include_context 'Api Authentication'
+
   let(:base_url)            { '//custom.talkdesk.com' }
   let(:scheme)              { 'https' }
 
