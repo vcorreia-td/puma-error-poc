@@ -53,7 +53,7 @@ Required environment variables:
 
 `List here ENV vars which the service will not function without`
 
-* `API_KEYS`: Comma-separated list of values that are accepted as part of the `X-Api-key` header or the `api_key` parameter. Only requests including one of these keys in the `X-Api-key` header or `api_key` parameter will be serviced, otherwise they just get an HTTP 401 Unauthorized status code. To ease testing during development, these headers are ignored when `RACK_ENV` is `development`.
+* `API_KEYS`: Comma-separated list of values that are accepted as part of the `X-Api-Key` header or the `api_key` parameter. Only requests including one of these keys in the `X-Api-Key` header or `api_key` parameter will be serviced, otherwise they just get an HTTP 401 Unauthorized status code. To ease testing during development, these headers are ignored when `RACK_ENV` is `development`.
 
 Optional knobs:
 
