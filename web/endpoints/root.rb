@@ -8,7 +8,7 @@ module MyServiceName
       desc 'API Root' do
         success Serializer::Root
         failure [
-          [400, 'Bad request', Serializer::Error]
+          [400, 'Bad request', Serializer::Error],
         ]
       end
 

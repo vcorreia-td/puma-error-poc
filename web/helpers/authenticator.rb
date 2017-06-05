@@ -1,7 +1,6 @@
 module MyServiceName
   module Helpers
     module Authenticator
-
       NoApiKeysConfigured = Class.new(StandardError)
 
       def self.call(auth_keys:, submitted_key:)

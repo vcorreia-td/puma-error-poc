@@ -1,7 +1,6 @@
 require_relative '../../../web/helpers/authenticator'
 
 RSpec.describe MyServiceName::Helpers::Authenticator do
-
   subject { described_class }
 
   describe '.call' do
