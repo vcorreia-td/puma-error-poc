@@ -3,6 +3,7 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - config/puma.rb
+    - bin/**
 
 Metrics/BlockLength:
   Exclude:
@@ -32,7 +33,7 @@ Style/WordArray:
 Style/DoubleNegation:
   Enabled: false
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/Documentation:
@@ -53,10 +54,10 @@ Style/TrailingCommaInArguments:
 Style/ModuleFunction:
   Enabled: false
 
-Style/EmptyLinesAroundAccessModifier:
+Layout/EmptyLinesAroundAccessModifier:
   Enabled: false
 
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
 Style/EmptyLiteral:
@@ -65,13 +66,16 @@ Style/EmptyLiteral:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/EmptyLinesAroundClassBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
 Performance/RedundantBlockCall:
   Enabled: false
 
-Style/ClosingParenthesisIndentation:
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
   Enabled: false
 
 Bundler/OrderedGems:
