@@ -47,7 +47,7 @@ RSpec.describe MyServiceName::Helpers::Authenticator do
       end
     end
 
-    context 'when the athentic keys is empty' do
+    context 'when no authentication key is configured' do
       let(:api_keys) { '' }
       let(:key) { '' }
 
