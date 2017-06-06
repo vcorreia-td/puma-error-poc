@@ -1,12 +1,12 @@
 namespace :ruby_service do
   desc 'bootstraps the service'
-  task :bootstrap, [:service_name] do |_task, service_name:|
+  task :bootstrap, %i[service_name module_name] do |_task, service_name:, module_name: camelize(service_name)|
     Dir.glob('**/*') do |file_path|
       rename_files(file_path, service_name) if file_path.include? 'my_service_name'
     end
 
     Dir.glob('**/*.{ru,rb}') do |file_path|
-      replace_file_contents(file_path, service_name)
+      replace_file_contents(file_path, service_name, module_name)
     end
 
     puts ' Done.'
@@ -23,13 +23,13 @@ def rename_files(file_path, new_name)
   end
 end
 
-def replace_file_contents(file_path, new_name)
+def replace_file_contents(file_path, service_name, module_name)
   file_contents = File.read(file_path)
 
   new_contents =
     file_contents
-    .gsub(/my_service_name/, new_name)
-    .gsub(/MyServiceName/, camelize(new_name))
+    .gsub(/my_service_name/, service_name)
+    .gsub(/MyServiceName/, module_name)
 
   File.open(file_path, 'w') { |file| file.puts new_contents }
 end
