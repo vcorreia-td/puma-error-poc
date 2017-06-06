@@ -26,7 +26,11 @@ This should install all dependencies and create a `Gemfile.lock`.
 
 * `bundle exec rake "ruby_service:bootstrap[awesome_api]"`
 
-This will rename and files and directories name `my_service_name`, which is the default name used in the template, as well as replace all occurrences of `my_service_name` and `MyServiceName` inside all files. Instead, the name you have as an argument will appear.
+This will rename files and directories named `my_service_name`, which is the default name used in the template. All occurrences of `my_service_name` and `MyServiceName` inside all files will also be replaced by the new service name `awesome_api` and module name `AwesomeApi`.
+
+The rake task also supports an optional second argument to explicit the indended project module name:
+
+* `bundle exec rake "ruby_service:bootstrap[awesome_api,AwesomeAPI]"`
 
 ### Setting up your remote
 
