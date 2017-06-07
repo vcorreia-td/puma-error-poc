@@ -6,14 +6,11 @@ gem 'puma'
 gem 'rack-cors'
 gem 'grape'
 gem 'grape-route-helpers'
-gem 'oat',
-  git: 'https://github.com/Talkdesk/oat.git',
-  branch: 'improve-serialization-performance'
+gem 'oat', '>= 0.5.1'
 gem 'grape-swagger', '~> 0.27', '>= 0.27.0'
 gem 'dry-container'
-gem 'oat-swagger',
-  git: 'https://github.com/Talkdesk/oat-swagger.git',
-  tag: 'v0.1.3-beta'
+gem 'oat-swagger', '>= 0.1.3',
+  git: 'https://github.com/Talkdesk/oat-swagger.git'
 
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
