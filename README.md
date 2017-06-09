@@ -106,6 +106,15 @@ This project includes the `pry-debugger` gem, so you can use `next`/`step`/`fini
 
 I recommend only adding that environment variable when you really want to debug something in this way, as it otherwise slows JRuby down **a lot**.
 
+## Docker
+
+To be able to use pry inside Docker you need to either:
+
+* **run** the app with the *service-ports* option: `docker-compose run --service-ports dev-jruby`
+* **up** the app and attach to the container: `docker-compose up dev-jruby` followed by `docker attach <container_id>`
+
+Otherwise the service will not stop when it reaches a `binding.pry` statement since there won't be any interactive shell sessions available.
+
 # Rubocop
 
 Check for style offenses by running: `./bin/rubocop`
