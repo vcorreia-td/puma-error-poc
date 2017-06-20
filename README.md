@@ -70,7 +70,7 @@ Optional knobs:
 
 ## 1. How to switch your ruby engine
 
-JRuby: `rvm use jruby-9.1.10.0`
+JRuby: `rvm use jruby-9.1.12.0`
 
 MRI: `rvm use ruby-2.4.1`
 
@@ -82,7 +82,7 @@ $ bundle update --ruby
 
 ## 2. Replace the contents of `.ruby-version`
 
-JRuby: `jruby-9.1.10.0`
+JRuby: `jruby-9.1.12.0`
 
 MRI: `ruby-2.4.1`
 

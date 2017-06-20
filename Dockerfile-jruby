@@ -1,4 +1,4 @@
-FROM jruby:9.1.10.0
+FROM jruby:9.1.12.0
 MAINTAINER Talkdesk DevOps <devops@talkdesk.com>
 
 ENV APP_HOME /usr/src/app
