@@ -27,6 +27,11 @@ services:
     extends: jruby
     command: bin/rspec
 
+  tests-jruby-debug:
+    extends: tests-jruby
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
+
   tests-mri:
     extends: mri
     command: bin/rspec
