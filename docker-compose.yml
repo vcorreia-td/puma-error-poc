@@ -40,6 +40,8 @@ services:
     extends: jruby
     ports:
       - '9292:9292'
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
     command: bin/puma -b tcp://0.0.0.0:9292 config.ru
 
   dev-mri:
@@ -50,6 +52,8 @@ services:
 
   console-jruby:
     extends: jruby
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
     command: bin/console
 
   console-mri:
