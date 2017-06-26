@@ -8,7 +8,7 @@ services:
       args:
         BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
     environment:
-      - JRUBY_OPTS=--dev
+      - JRUBY_OPTS=--dev -Xmanagement.enabled=true
     dns:
       - 8.8.8.8
       - 8.8.4.4
