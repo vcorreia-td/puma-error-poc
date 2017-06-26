@@ -9,6 +9,7 @@ services:
         BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
     environment:
       - JRUBY_OPTS=--dev -Xmanagement.enabled=true
+      - JAVA_TOOL_OPTIONS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dcom.sun.management.jmxremote.rmi.port=9010
     dns:
       - 8.8.8.8
       - 8.8.4.4

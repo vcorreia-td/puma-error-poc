@@ -99,6 +99,12 @@ To check which version you are on do: `ruby -v`
 
 * [JRuby guide](docs/JRUBY.md)
 
+## VisualVM
+
+[VisualVM screenshot](http://i.imgur.com/7UkKa1W.png)
+
+The docker configuration is already baked so you can use VisualVM to connect to the JVM for profiling and debugging usage. See the [Ninjas' guide to getting started with VisualVM](https://talkdesk.atlassian.net/wiki/display/TET/Ninjas%27+guide+to+getting+started+with+VisualVM) for more details on how to use this tool.
+
 # Debugging
 
 This project includes the `pry-debugger` gem, so you can use `next`/`step`/`finish`/`continue` inside of pry, but you'll need to add `--debug` to your `JRUBY_OPTS` for these to work.
