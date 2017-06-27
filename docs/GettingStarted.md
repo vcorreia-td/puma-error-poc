@@ -2,7 +2,7 @@
 
 This will guide through the process bootstraping your project from this template.
 
-### Choose your projects name
+### Choose your project's name
 
 Let assume you chose `awesome_api`.
 
@@ -28,7 +28,7 @@ This should install all dependencies and create a `Gemfile.lock`.
 
 This will rename files and directories named `my_service_name`, which is the default name used in the template. All occurrences of `my_service_name` and `MyServiceName` inside all files will also be replaced by the new service name `awesome_api` and module name `AwesomeApi`.
 
-The rake task also supports an optional second argument to explicit the indended project module name:
+The rake task also supports an optional second argument to control the camel-cased project name:
 
 * `bundle exec rake "ruby_service:bootstrap[awesome_api,AwesomeAPI]"`
 

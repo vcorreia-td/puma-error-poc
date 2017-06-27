@@ -8,7 +8,8 @@ services:
       args:
         BUNDLE_GITHUB__COM: ${BUNDLE_GITHUB__COM}
     environment:
-      - JRUBY_OPTS=--dev
+      - JRUBY_OPTS=--dev -Xmanagement.enabled=true
+      - JAVA_TOOL_OPTIONS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dcom.sun.management.jmxremote.rmi.port=9010
     dns:
       - 8.8.8.8
       - 8.8.4.4
@@ -27,6 +28,11 @@ services:
     extends: jruby
     command: bin/rspec
 
+  tests-jruby-debug:
+    extends: tests-jruby
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
+
   tests-mri:
     extends: mri
     command: bin/rspec
@@ -35,6 +41,8 @@ services:
     extends: jruby
     ports:
       - '9292:9292'
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
     command: bin/puma -b tcp://0.0.0.0:9292 config.ru
 
   dev-mri:
@@ -45,6 +53,8 @@ services:
 
   console-jruby:
     extends: jruby
+    environment:
+      - JRUBY_OPTS=--dev --debug -Xmanagement.enabled=true
     command: bin/console
 
   console-mri:

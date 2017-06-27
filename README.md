@@ -38,14 +38,14 @@ To run this system, the following tools are required:
 
 To install the private dependencies on talkdesk's github repositories, you need to configure bundler to use a github oauth token.
 
-To do so, go to https://help.github.com/articles/creating-an-access-token-for-command-line-use/ to create a new token, and then define the BUNDLE_GITHUB__COM environment variable using the resulting token:
+To do so, go to <https://help.github.com/articles/creating-an-access-token-for-command-line-use/> to create a new token, and then define the `BUNDLE_GITHUB__COM` environment variable using the resulting token:
 
-```
+```bash
 # add this to your .bashrc or .zshrc
 export BUNDLE_GITHUB__COM=github-oauth-token-you-just-generated:x-oauth-basic
 ```
 
-This will work both for installing and running the gem dependencies locally, and for doing development inside docker. Do note that just configuring bundler (e.g. as described here) is NOT ENOUGH to get the docker environment working.
+This will work both for installing and running the gem dependencies locally, and for doing development inside docker. Do note that just configuring bundler (e.g. as described [here](https://medium.com/@frodsan/installing-a-gem-from-a-private-github-repo-heroku-a895073ae7d)) is **NOT ENOUGH** to get the docker environment working.
 
 # Environment setup
 
@@ -53,7 +53,7 @@ Required environment variables:
 
 `List here ENV vars which the service will not function without`
 
-* `API_KEYS`: Comma-separated list of values that are accepted as part of the `X-Api-Key` header or the `api_key` parameter. Only requests including one of these keys in the `X-Api-Key` header or `api_key` parameter will be serviced, otherwise they just get an HTTP 401 Unauthorized status code. To ease testing during development, these headers are ignored when `RACK_ENV` is `development`.
+* `API_KEYS`: Comma-separated list of values that are accepted as part of the `X-Api-Key` header or the `api_key` parameter. Only requests including one of these keys in the `X-Api-Key` header or `api_key` parameter will be serviced, otherwise they just get an HTTP `401 Unauthorized` status code. To ease testing during development, these headers are ignored when `RACK_ENV` is `development`.
 
 Optional knobs:
 
@@ -62,9 +62,9 @@ Optional knobs:
 * `RACK_ENV`: Used to configure the current application environment, e.g. `production`, `qa`, `staging`, `test` or `development` (defaults to `development`)
 * `APP_NAME`: Application name, used in reporting and logging (defaults to `my_service_name`)
 * `APP_VERSION`: Application version for logging (defaults to heroku metadata if available, else `ENV['RACK_ENV']`)
-* `BUGSNAG_API_KEY`: Bugsnag Notifier API Key will configure bugsnag notifier to emit all notifications to the bugsnag application represented by this key (no default)
-* `PUMA_PROCESS_THREADS`: Number of threads per puma process (defaults to `16`)
-* `LOG_LEVEL`: severity level for logs (defaults to `info`, when `RACK_ENV`=`test` defaults to `warn`)
+* `BUGSNAG_API_KEY`: Bugsnag exception tracker API key to when reporting exceptions (no default)
+* `PUMA_PROCESS_THREADS`: Number of threads per puma web server process (defaults to `16`)
+* `LOG_LEVEL`: severity level for logs (defaults to `info` except when `RACK_ENV` is `test`, and in that case defaults to `warn`)
 
 # Switching between Ruby Engines (MRI & JRuby)
 
@@ -93,12 +93,17 @@ To check which version you are on do: `ruby -v`
 ## 3. Additional info
 
 * Your `bin/` executables run regardless of the engine.
-* Although you can specify the jruby engine in the Gemfile it is not necessary. It will use its environments engine. This way you don't need to change the Gemfile everytime you switch versions.
-* JRuby 9.1.9.0 targets the `2.3.3` ruby version. JRuby will not work if you change it.
+* JRuby 9.1.12.0 targets the `2.3.3` ruby version. JRuby will not work if you change to a later version on the `Gemfile`.
 
 # JRuby
 
 * [JRuby guide](docs/JRUBY.md)
+
+## VisualVM
+
+[VisualVM screenshot](http://i.imgur.com/7UkKa1W.png)
+
+The docker configuration is already baked so you can use VisualVM to connect to the JVM for profiling and debugging usage. See the [Ninjas' guide to getting started with VisualVM](https://talkdesk.atlassian.net/wiki/display/TET/Ninjas%27+guide+to+getting+started+with+VisualVM) for more details on how to use this tool.
 
 # Debugging
 
@@ -149,7 +154,7 @@ Check for style offenses by running: `./bin/rubocop`
 # Continuous Integration/Delivery (CI/CD)
 
 1. Go to: https://github.com/Talkdesk/jenkins-jobs
-2. Read the docs and/or talk to @punnie
+2. Read the docs and/or talk to the productivity team
 3. Open PR to add your project to automatic CI/CD pipeline
 
 # Web API
