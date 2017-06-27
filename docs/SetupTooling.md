@@ -4,7 +4,11 @@ This page details how to setup tooling for a new application (in Heroku).
 
 ## LogEntries
 
-Add the Free LogEntries addon to your application.
+1. Using Heroky web interface, go to your application.
+2. Under the **Resources**, below the Dynos information, search for LogEntries.
+3. Add the addon to your application, using the free **TryIt** plan.
+4. Repeat for the other environments.
+
 For Production, contact the SRE team when the application is ready for PROD deploy so that they change LogEntries to the unified account.
 
 ## NewRelic
