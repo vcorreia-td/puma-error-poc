@@ -44,4 +44,6 @@ Assuming you already created a git remote repository for your project
 * `git remote set-url origin git@github.com:Talkdesk/awesome-api`
 * `git push -u origin master`
 
+Follow [Setup Tooling Guide](./SetupTooling.md) to setup different tools we use at Talkdesk.
+
 ### That's it! You're good to go :)
