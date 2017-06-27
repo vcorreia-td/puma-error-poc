@@ -93,7 +93,7 @@ To check which version you are on do: `ruby -v`
 ## 3. Additional info
 
 * Your `bin/` executables run regardless of the engine.
-* JRuby 9.1.9.0 targets the `2.3.3` ruby version. JRuby will not work if you change to a later version on the `Gemfile`.
+* JRuby 9.1.12.0 targets the `2.3.3` ruby version. JRuby will not work if you change to a later version on the `Gemfile`.
 
 # JRuby
 
