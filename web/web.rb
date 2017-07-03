@@ -20,6 +20,9 @@ require 'helpers/auth'
 module MyServiceName
   class Web < Grape::API
 
+    JSON_HAL_MEDIA_TYPE = 'application/hal+json'
+    JSON_MEDIA_TYPE = 'application/json'
+
     helpers Helpers::RequestMetadata
     helpers Helpers::NewRelicInstrumentation
     helpers Helpers::Log
@@ -28,12 +31,17 @@ module MyServiceName
 
     # https://github.com/ruby-grape/grape#table-of-contents
 
-    content_type    :json_hal, 'application/hal+json'
-    parser          :json_hal, Helpers::JsonParser
+    content_type :json_hal, JSON_HAL_MEDIA_TYPE
+    content_type :json,     JSON_MEDIA_TYPE
+
+    parser :json_hal, Helpers::JsonParser
+    parser :json,     Helpers::JsonParser
+
     formatter       :json_hal, Helpers::JsonFormatter
     error_formatter :json_hal, Helpers::ErrorFormatter
-    format          :json_hal
-    default_format  :json_hal
+
+    format         :json_hal
+    default_format :json_hal
 
     before do
       setup_request_metadata
