@@ -7,7 +7,8 @@ LOG_LAYOUT =
   else
     # https://talkdesk.atlassian.net/wiki/display/TET/Logging+policy
     Logging.layouts.pattern(
-      date_method: 'utc.iso8601(3)',
+      utc_offset: 'UTC',
+      date_method: 'iso8601(3)',
       pattern:
         "%d #{ENV['DYNO']} #{ENV['APP_NAME']} " +
         %w(
