@@ -15,7 +15,7 @@ gem 'oat-swagger', '>= 0.1.3',
 gem 'oj', platforms: :ruby
 gem 'jrjackson', platforms: :jruby
 gem 'multi_json'
-gem 'logging', '2.1.0' # This is the last known version that outputs logs in Heroku
+gem 'logging'
 gem 'newrelic_rpm'
 gem 'bugsnag'
 
