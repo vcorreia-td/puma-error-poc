@@ -10,11 +10,11 @@ namespace :ruby_service do
       'Rakefile',
     ]
 
-    file_content_replacement_globs.each { |glob|
+    file_content_replacement_globs.each do |glob|
       Dir.glob(glob) do |file_path|
         replace_file_contents(file_path, service_name, module_name)
       end
-    }
+    end
 
     puts ' Done.'
   end
