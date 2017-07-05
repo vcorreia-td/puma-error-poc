@@ -5,9 +5,16 @@ namespace :ruby_service do
       rename_files(file_path, service_name) if file_path.include? 'my_service_name'
     end
 
-    Dir.glob('**/*.{ru,rb}') do |file_path|
-      replace_file_contents(file_path, service_name, module_name)
-    end
+    file_content_replacement_globs = [
+      '**/*.{ru,rb}',
+      'Rakefile',
+    ]
+
+    file_content_replacement_globs.each { |glob|
+      Dir.glob(glob) do |file_path|
+        replace_file_contents(file_path, service_name, module_name)
+      end
+    }
 
     puts ' Done.'
   end
