@@ -1,7 +1,7 @@
 require_relative 'base'
 
 module MyServiceName
-  module Serializer
+  module Serializers
     class AddSix < Base
       property :result, type: Integer, desc: 'Result of adding 6 to a number', required: true
       property :at,

@@ -1,7 +1,7 @@
 require 'grape'
 
 module MyServiceName
-  module Serializer
+  module Serializers
     class Base < OatSwagger::Serializer
       include GrapeRouteHelpers::NamedRouteMatcher
 

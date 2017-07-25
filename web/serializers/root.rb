@@ -1,7 +1,7 @@
 require 'serializers/base'
 
 module MyServiceName
-  module Serializer
+  module Serializers
     class Root < Base
       build_schema do
         schema do
