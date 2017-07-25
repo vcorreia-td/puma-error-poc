@@ -7,9 +7,9 @@ module MyServiceName
     class AddSix < Grape::API
       resource :addsix do
         desc 'Adds 6 to the received number' do
-          success Serializer::AddSix
+          success Serializers::AddSix
           failure [
-            [400, 'Bad request', Serializer::Error],
+            [400, 'Bad request', Serializers::Error],
           ]
         end
 
@@ -21,7 +21,7 @@ module MyServiceName
           result = System[:add_six].call(number: params[:number])
 
           status 200
-          Serializer::AddSix.new(result, env)
+          Serializers::AddSix.new(result, env)
         end
       end
     end
