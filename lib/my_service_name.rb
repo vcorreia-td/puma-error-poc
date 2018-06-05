@@ -11,6 +11,8 @@ module MyServiceName
     # require 'my_dependency_here'
 
     require 'my_service_name/interactors/add_six'
+    require 'my_service_name/interactors/my_interactor'
+    require 'my_service_name/repositories/handoff_to_legacy_request_repository'    
 
     # When to use memoize?
     # Memoize should be used when registering thread-safe instances, so they
@@ -30,6 +32,14 @@ module MyServiceName
 
     container.register(:add_six, memoize: true) {
       Interactors::AddSix.new(container)
+    }
+
+    container.register(:my_interactor, memoize: true) {
+      Interactors::MyInteractor.new
+    }
+
+    container.register(:handoff_to_legacy_request_repository, memoize: true) {
+      Repository::HandoffToLegacyRequestRepository.new
     }
 
     eagerly_initialize(container) if eagerly_initialize

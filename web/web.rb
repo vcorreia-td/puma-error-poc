@@ -8,6 +8,7 @@ require 'grape/route_helpers'
 
 require 'endpoints/root'
 require 'endpoints/add_six'
+require 'endpoints/test_endpoint'
 
 require 'helpers/request_metadata'
 require 'helpers/new_relic_instrumentation'
@@ -59,6 +60,7 @@ module MyServiceName
 
     mount Endpoints::Root
     mount Endpoints::AddSix
+    mount Endpoints::Test
 
     ###
 
