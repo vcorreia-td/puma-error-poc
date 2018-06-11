@@ -25,6 +25,7 @@ module MyServiceName
         @connection = PG::Connection.open(db_url)
       end
 
+      # Default insert
       def insert(interaction_id:, rooms:)
         generated_id = Helper::IdGenerator.call
         logger.info "HandoffToLegacyRequest Repository: insert id='#{generated_id}' " \
@@ -42,6 +43,7 @@ module MyServiceName
         generated_id
       end
 
+      # insert "that tries to recconect and run"
       def insert_with_retries(interaction_id:, rooms:, retries: 5, sleep_seconds: 1)
         generated_id = Helper::IdGenerator.call
         logger.info "HandoffToLegacyRequest Repository: insert id='#{generated_id}' " \
@@ -62,17 +64,38 @@ module MyServiceName
             last_error = e
             logger.info 'Failed to persist. --> Retrying'
             sleep sleep_seconds
-            if @connection.status == PG::CONNECTION_BAD
-              @connection.reset
+            if !connected?
+              reconnect
             end
           end
         end
         raise last_error
       end
 
+      # insert and spawn reconnect thread if error
+      def insert_and_spawn_reconnect_thread(interaction_id:, rooms:, sleep_seconds: 1)
+        generated_id = Helper::IdGenerator.call
+        logger.info "HandoffToLegacyRequest Repository: insert id='#{generated_id}' " \
+          "interaction_id='#{interaction_id}' rooms='#{rooms}'"
+
+        begin
+          connection.transaction do |transaction|
+            insert_query(
+              id: generated_id,
+              interaction_id: interaction_id,
+              transaction: transaction,
+            )
+            insert_rooms(rooms: rooms, handoff_to_legacy_request_id: generated_id, transaction: transaction)
+          end
+        rescue PG::UnableToSend, PG::ConnectionBad, PG::AdminShutdown => e
+          async_reconnect sleep_seconds
+          raise
+        end
+      end
+
       # Connection Management
-      def connection_open?
-        !@connection.finished?
+      def connected?
+        @connection.status == PG::CONNECTION_OK
       end
 
       def reconnect
@@ -80,6 +103,19 @@ module MyServiceName
       end
       
       private
+
+      def async_reconnect(sleep_seconds)
+        thread = Thread.new do
+          loop do
+            logger.info 'Trying to reconnect!'
+            reconnect
+            break if connected?
+            sleep sleep_seconds
+          end
+          logger.info 'Reconnected!! \o/'
+        end
+        logger.info "Reconnecting to DB. Launched Thread."
+      end
 
       def insert_rooms(rooms:, handoff_to_legacy_request_id:, transaction:)
         rooms.each do |pas_room_id|
