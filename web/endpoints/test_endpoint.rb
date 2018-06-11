@@ -12,10 +12,6 @@ module MyServiceName
         end
       end
 
-      before do
-        error!('No database Connection', 500) unless repositories_connected?
-      end
-
       resource :test do
         desc "test endpoint"
         
@@ -50,10 +46,15 @@ module MyServiceName
 
       resource :test_thread do
         desc "test endpoint"
+
+        before do
+          error!('No database Connection', 500) unless repositories_connected?
+        end
         
         params do
           requires :value, type: String, desc: 'some value'
         end
+        
         route_param :value do
           get do
             value = params[:value]
