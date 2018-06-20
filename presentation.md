@@ -55,10 +55,6 @@ end
 class: middle
 ```ruby
 def insert_and_spawn_reconnect_thread(interaction_id:, rooms:, sleep_seconds: 1)
-    generated_id = Helper::IdGenerator.call
-    logger.info "HandoffToLegacyRequest Repository: insert id='#{generated_id}' " \
-        "interaction_id='#{interaction_id}' rooms='#{rooms}'"
-
     begin
         connection.transaction do |transaction|
             # DO STUFF
