@@ -1,23 +1,4 @@
-# POC for handling critial subsystem failures
-
-## Introduction
-(copied from )
-
-> When the application loses connection to the database it
-> becomes unusable and unstable. The solution implemented
-> consists in forcefully shut down the application when a
-> Postgres connection error happens.
-> 
-> Since puma is designed to recuperate from any kind of runtime
-> errors, there was a need to use Kernel.exit! to terminate
-> the application. This method does not run any of the exit
-> handlers registered. To address this, the ExitApp module
-> was developed.
-> 
-> This module wraps the Kernel.at_exit method, storing the
-> block provided to it. To forcefully terminate the application,
-> just call ExitApp.exit_app. It runs all the exit handlers
-> and then exits the application.
+# POC for handling critical subsystem failures
 
 ## How to run
 
